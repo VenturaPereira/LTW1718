@@ -1,9 +1,11 @@
 <?php
 
-$name= $_POST[""];
-$password= $_POST[""];
-$email = $_POST[""];
-$confirmPassword= $_POST[""];
+$firstName= $_POST["firstName"];
+$lastName= $_POST["LastName"]
+$password= $_POST["Password"];
+$email = $_POST["Email"];
+$name = $firstName . $lastName;
+$confirmPassword= $_POST["Confirm Password"];
 //abrir db
 $dbh = new PDO('sqlite:taskify.db');
 $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -11,7 +13,7 @@ $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 
-
+//wi
 
 if($confirmPassword == $password){
   try{
