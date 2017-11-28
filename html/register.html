@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>To-Do List</title>
+		<title>Taskify</title>
 		<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
 	</head>
 	<body>
 		<div class="mainpage_text">
 			<center>
-				<h1>To-Do List</h1>
+				<h1>Taskify</h1>
 			</center>
 
 			<center>
@@ -15,25 +15,29 @@
 			</center>
 		</div>	
 		<div class="container_register">
-			<form>
+			<form action="register.php" method="post">
 				<div class="form_input">
-					<input type="text" placeholder="FirstName">
+					<input type="text" placeholder="FirstName" name="firstName">
 				</div>
 				
 				<div class="form_input">
-					<input type="text" placeholder="LastName">
+					<input type="text" placeholder="LastName"
+					name="lastName">
 				</div>
 				
 				<div class="form_input">
-					<input type="email" placeholder="Email">
+					<input type="email" placeholder="Email"
+					name="email">
 				</div>
 				
 				<div class="form_input">
-					<input type="password" placeholder="Password">
+					<input type="password" placeholder="Password"
+					name="password">
 				</div>
 
 				<div class="form_input">
-					<input type="password" placeholder="Confirm Password">
+					<input type="password" placeholder="Confirm Password"
+					name="confirmPassword">
 				</div>
 			</form>
 		</div>
