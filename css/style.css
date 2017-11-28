@@ -6,41 +6,7 @@ body{
 	background-position: absolute;
 }
 
-.container_register{
-	width: 500px;
-	height: 400px;
-	text-align: center;
-	background-color: #34495E;
-	border-radius: 4px;
-	margin: 0 auto;
-	margin-top: 150px;
-}
-
-.form_input{
-	height: 50px;
-	width: 500px;
-	font-size: 40px;
-	margin-bottom: 20px; 
-}
-
-.form_input:focus{
-    outline: none;
-    box-shadow: 0px 0px 5px #61C5FA;
-    border-color: #5AB0DB;
-}
-
-.form_input:hover{
-	background-color: pink;
-	border-radius: 5px;
-}
-
-h1{
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
-h2{
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
+/*Main page styling*/
 
 .mainpage_text{
 	width: 500px;
@@ -48,7 +14,11 @@ h2{
 	text-align: center;
 	border-radius: 4px;
 	margin: 0 auto;
-	margin-top: 150px;
+	margin-top: 120px;
+}
+
+.mainpage_container {
+	margin-top: -50px;
 }
 
 .mainpage_button {
@@ -59,16 +29,121 @@ h2{
   color: #e89f17;
   font-size: 20px;
   background: #4A4474;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 30px 10px 30px;
   border: solid #1f628d 0px;
   text-decoration: none;
+  margin-top: 2px;
 }
+
 
 .mainpage_button:hover {
   background: #6a7feb;
   text-decoration: none;
 }
 
-a{
+.mainpage_button a{
 	color: #e89f17;
+	text-decoration: none;
+}
+
+
+
+/* Register page styling */
+
+.register_text{
+	width: 500px;
+	height: 400px;
+	text-align: center;
+	border-radius: 4px;
+	margin: 0 auto;
+	margin-top: 120px;
+}
+
+.container_register{
+	width: 500px;
+	height: 380px;
+	text-align: center;
+	/*background-color: #4A4474;*/
+	border-radius: 4px;
+	margin: 0 auto;
+	margin-top: -240px;
+	opacity: 0.7;
+}
+
+.container_register a{
+	color: #4A4474;
+	text-decoration: none;
+}
+
+.form_input input{
+	width: 400px;
+    padding: 12px 20px;
+    margin-top: 100px;
+    margin: 16px auto;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.form_input input:focus {
+    border: 3px solid #4A4485;
+}
+
+h1{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+h2{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.account_button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  width: 300px;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #e89f17;
+  font-size: 15px;
+  background: #000000;
+  padding: 10px 30px 10px 30px;
+  border: solid #1f628d 0px;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 2px;
+}
+
+
+.account_button a{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+/*Login stying*/
+
+
+
+.container_login{
+	width: 500px;
+	height: 380px;
+	text-align: center;
+	border-radius: 4px;
+	margin: 0 auto;
+	margin-top: -150px;
+	margin-bottom: -100px;
+	opacity: 0.7;	
+}
+
+.login_message{
+	width: 300px;
+	height: 100px;
+	text-align: center;
+	border-radius: 4px;
+	margin: 0 auto;
+	margin-top: -50px;
+	margin-bottom: -50px;
+	opacity: 0.7;
+}
+
+.login_message h3{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
