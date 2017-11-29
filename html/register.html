@@ -1,40 +1,46 @@
-<!DOCTYPE html>
-<html>
+
+
 	<head>
-		<title>To-Do List</title>
+		<title>Taskify</title>
 		<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
 	</head>
 	<body>
 		<div class="mainpage_text">
 			<center>
-				<h1>To-Do List</h1>
+				<h1>Taskify</h1>
 			</center>
 
 			<center>
 				<h2>The anti procrastination tool of the internet</h2>
 			</center>
-		</div>	
+		</div>
 		<div class="container_register">
-			<form>
+			<form action="/php/register.php" method="post">
 				<div class="form_input">
-					<input type="text" placeholder="FirstName">
-				</div>
-				
-				<div class="form_input">
-					<input type="text" placeholder="LastName">
-				</div>
-				
-				<div class="form_input">
-					<input type="email" placeholder="Email">
-				</div>
-				
-				<div class="form_input">
-					<input type="password" placeholder="Password">
+					<input type="text" placeholder="FirstName" name="firstName">
 				</div>
 
 				<div class="form_input">
-					<input type="password" placeholder="Confirm Password">
+					<input type="text" placeholder="LastName"
+					name="lastName">
 				</div>
+
+				<div class="form_input">
+					<input type="email" placeholder="Email"
+					name="email">
+				</div>
+
+				<div class="form_input">
+					<input type="password" placeholder="Password"
+					name="password">
+				</div>
+
+				<div class="form_input">
+					<input type="password" placeholder="Confirm Password"
+					name="confirmPassword">
+				</div>
+
+				<input type="submit" value="submit">
 			</form>
 		</div>
 		<center>
@@ -42,6 +48,10 @@
 					<a href="login.html">I already have an account</a>
 
 			</div>
-		</center>		
+		</center>
 	</body>
-</html>
+	<?php
+
+	echo "<a href='/html/register.html'> Try again!</a>";
+
+	?>
