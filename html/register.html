@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+
+
 	<head>
 		<title>Taskify</title>
 		<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
@@ -13,23 +13,23 @@
 			<center>
 				<h2>The anti procrastination tool of the internet</h2>
 			</center>
-		</div>	
+		</div>
 		<div class="container_register">
-			<form action="register.php" method="post">
+			<form action="/php/register.php" method="post">
 				<div class="form_input">
 					<input type="text" placeholder="FirstName" name="firstName">
 				</div>
-				
+
 				<div class="form_input">
 					<input type="text" placeholder="LastName"
 					name="lastName">
 				</div>
-				
+
 				<div class="form_input">
 					<input type="email" placeholder="Email"
 					name="email">
 				</div>
-				
+
 				<div class="form_input">
 					<input type="password" placeholder="Password"
 					name="password">
@@ -48,6 +48,10 @@
 					<a href="login.html">I already have an account</a>
 
 			</div>
-		</center>		
+		</center>
 	</body>
-</html>
+	<?php
+
+	echo "<a href='/html/register.html'> Try again!</a>";
+
+	?>
