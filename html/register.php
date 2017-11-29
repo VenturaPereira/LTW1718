@@ -1,5 +1,6 @@
 <div class="registerValidation">
 <?php
+include_once('C:\xampp\htdocs\LTW1718\php\init.php');
 if(isset($_REQUEST['submit'])){
 if(isset($_REQUEST['check'])){
 
@@ -9,17 +10,6 @@ $password= $_POST['password'];
 $email = $_POST['email'];
 $name = $firstName . $lastName;
 $confirmPassword= $_POST['confirmPassword'];
-
-
-//abrir db
-
-$dbh = new PDO('sqlite:taskify.db');
-$dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
-
-//wi
 
 if($confirmPassword == $password){
 	try{
