@@ -1,12 +1,26 @@
 
 
-body{
-	margin: 0 auto;
-	background-image: url("https://wallpapersite.com/images/wallpapers/sunset-5120x2880-desert-dunes-minimal-5k-5603.jpg");
-	background-repeat: no-repeat;
-	background-size: 100%;
-	background-position: absolute;
+html, body{
+	margin: 0 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ffb368;
 }
+
+.bg {
+    /* The image used */
+    background-image: "https://hdqwalls.com/download/spike-spiegel-minimalism-2d-3840x2160.jpg";
+
+    /* Full height */
+    
+    width: 100%;
+	height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 /*Main page styling*/
 
@@ -108,6 +122,10 @@ h2{
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
+a{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
 .account_button {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -164,14 +182,72 @@ h2{
 
 /* Profile page styling */
 
+.profilepage_container {
+	display: grid;
+ 	grid-template-columns: [col1] 250px [col2] 50px [col3] auto [colend];
+ 	grid-template-rows: [row1] 50px [row2] 25% [row3] auto [rowend];
+ 	width: 100%;
+	height: 100%;
+}
+
+.topbar {
+	grid-row-start: row1;
+	grid-row-end: row2;
+	grid-column-start: col1;
+	grid-column-end: colend;
+	background-color: #000;
+}
+
+.topbar h2 {
+	padding: 0px 0px 4px 32px;
+	color: #818181;
+	text-decoration: none;
+
+}
+
 .sidenav {
-	height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */ 
+	grid-row-start: row2;
+	grid-row-end: rowend;
+	grid-column-start: col1;
+	grid-column-end: col2;
+	background-color: #000;
+}
+
+.sidenav h2 {
+	padding: 8px 8px 8px 32px;
+	color: #818181;
+	text-decoration: none;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	color: #818181;
+	text-decoration: none;
+}
+
+.list_container {
+	display: grid;
+	height: 630px;
+	width: 1176px;
+	grid-template-columns: [c1] 200px [c2] 200px [c3] 200px [c4] 200px [cend];
+ 	grid-template-rows: [r1] 200px [r2] 200px [r3] 200px [r4] 200px [rowend];
+ 	grid-gap: 25px 25px;
+ 	padding: 25px 25px 25px 25px;
+
+}
+
+.list1 {
+	grid-row-start: r1;
+	grid-row-end: r2;
+	grid-column-start: c1;
+	grid-column-end: c2;
+	background-color: #FFF;
+}
+
+.list2 {
+	grid-row-start: r1;
+	grid-row-end: r2;
+	grid-column-start: c2;
+	grid-column-end: c3;
+	background-color: #FFF;
 }
