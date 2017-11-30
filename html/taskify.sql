@@ -10,3 +10,13 @@ CREATE TABLE todoList (
   name TEXT,
   userID INTEGER REFERENCES user
 );
+
+CREATE TABLE tasks (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT
+);
+
+CREATE TABLE tasksList (
+  idList INTEGER REFERENCES todoList,
+  idTask INTEGER REFERENCES tasks
+);

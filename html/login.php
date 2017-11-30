@@ -9,9 +9,10 @@ if(isset($_REQUEST['check'])){
 		$mail= $_POST['email'];
 		$password= $_POST['password'];
    if(isLoginCorrect($mail,$password)){
-		 echo "Doesn't exist!";
-	 }else{
+		 setCurrentUser($mail,$password);
 		 echo "Success!";
+	 }else{
+		echo "User isn't registered.";
 	 }
 }
 }
@@ -35,11 +36,11 @@ if(isset($_REQUEST['check'])){
 		<div class="container_login">
 			<form action= "login.php?check" method="post">
 				<div class="form_input">
-					<input type="email" placeholder="Email" name="email">
+					<input type="email" placeholder="Email" name="email" required>
 				</div>
 
 				<div class="form_input">
-					<input type="password" placeholder="Password" name="password">
+					<input type="password" placeholder="Password" name="password" required>
 				</div>
 
 				<input type="submit" name="sign_in" value="Sign in">
