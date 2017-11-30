@@ -1,7 +1,7 @@
 <div class="registerValidation">
 <?php
 include_once('C:\xampp\htdocs\LTW1718\php\init.php');
-if(isset($_REQUEST['submit'])){
+
 if(isset($_REQUEST['check'])){
 
 $firstName= $_POST['firstName'];
@@ -11,7 +11,6 @@ $email = $_POST['email'];
 $name = $firstName . $lastName;
 $confirmPassword= $_POST['confirmPassword'];
 
-if($confirmPassword == $password){
 	try{
 //insert statements
 $sqlToInsert='INSERT INTO user (name,password,email) VALUES(:name, :password,:email)';
@@ -30,17 +29,15 @@ $stmt->execute();
 	}
 	}
 
-}else {
-	echo "\n \n \n \nPasswords don't match!";
 }
-}
-}
+
 
 ?>
 </div>
 	<head>
 		<title>Taskify</title>
 		<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
+
 	</head>
 	<body>
 		<div class="mainpage_text">
@@ -53,7 +50,8 @@ $stmt->execute();
 			</center>
 		</div>
 		<div class="container_register">
-			<form action="register.php?check" method="post">
+			<form action="register.php?check" method="post" onsubmit="return handler();">
+				<script  src="http://localhost/LTW1718/js/register_validation.js"> </script>
 				<div class="form_input">
 					<input type="text" placeholder="FirstName" name="firstName" required>
 				</div>
@@ -76,6 +74,7 @@ $stmt->execute();
 				<div class="form_input">
 					<input type="password" placeholder="Confirm Password"
 					name="confirmPassword" required>
+					<div id="pass_int"> </div>
 				</div>
 
 				<input type="submit" name="submit" value="submit">
