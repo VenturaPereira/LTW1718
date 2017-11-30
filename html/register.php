@@ -1,25 +1,15 @@
 <div class="registerValidation">
 <?php
+include_once('C:\xampp\htdocs\LTW1718\php\init.php');
 if(isset($_REQUEST['submit'])){
 if(isset($_REQUEST['check'])){
 
 $firstName= $_POST['firstName'];
 $lastName= $_POST['lastName'];
-$password= $_POST['password'];
+$password= sha1($_POST['password']);
 $email = $_POST['email'];
 $name = $firstName . $lastName;
 $confirmPassword= $_POST['confirmPassword'];
-
-
-//abrir db
-
-$dbh = new PDO('sqlite:taskify.db');
-$dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
-
-//wi
 
 if($confirmPassword == $password){
 	try{
@@ -65,27 +55,27 @@ $stmt->execute();
 		<div class="container_register">
 			<form action="register.php?check" method="post">
 				<div class="form_input">
-					<input type="text" placeholder="FirstName" name="firstName">
+					<input type="text" placeholder="FirstName" name="firstName" required>
 				</div>
 
 				<div class="form_input">
 					<input type="text" placeholder="LastName"
-					name="lastName">
+					name="lastName" required>
 				</div>
 
 				<div class="form_input">
 					<input type="email" placeholder="Email"
-					name="email">
+					name="email" required>
 				</div>
 
 				<div class="form_input">
 					<input type="password" placeholder="Password"
-					name="password">
+					name="password" required>
 				</div>
 
 				<div class="form_input">
 					<input type="password" placeholder="Confirm Password"
-					name="confirmPassword">
+					name="confirmPassword" required>
 				</div>
 
 				<input type="submit" name="submit" value="submit">
