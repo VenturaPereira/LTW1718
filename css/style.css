@@ -251,14 +251,21 @@ a{
 	flex-direction: row;
 	grid-row-start: r0;
 	grid-row-end: r1;
-	grid-column-start: c2;
-	grid-column-end: c4;
+	grid-column-start: c3;
+	grid-column-end: cend;
 	background-color: #FFF;
 }
 
 .list_input input {
 	width: 550px;
 	height: 50px;
+}
+
+.list_dropdown {
+	grid-row-start: r0;
+	grid-row-end: r1;
+	grid-column-start: c1;
+	grid-column-end: c3;
 }
 
 .addBtn {
