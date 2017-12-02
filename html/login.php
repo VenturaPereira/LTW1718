@@ -1,5 +1,6 @@
 
 <div class="registerValidation">
+
 <?php
 include_once('C:\xampp\htdocs\LTW1718\php\login_session.php');
 include_once('C:\xampp\htdocs\LTW1718\php\init.php');
@@ -9,8 +10,8 @@ if(isset($_REQUEST['check'])){
 		$mail= $_POST['email'];
 		$password= $_POST['password'];
    if(isLoginCorrect($mail,$password)){
+
 		 setCurrentUser($mail,$password);
-		 echo "Success!";
 	 }else{
 		echo "User isn't registered.";
 	 }
@@ -19,6 +20,7 @@ if(isset($_REQUEST['check'])){
 	?>
 </div>
 	<head>
+
 		<title>Taskify</title>
 		<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
 	</head>
@@ -42,15 +44,19 @@ if(isset($_REQUEST['check'])){
 				<div class="form_input">
 					<input type="password" placeholder="Password" name="password" required>
 				</div>
+				<input type="submit" name="sign_in" value="Sign in" >
 
-				<input type="submit" name="sign_in" value="Sign in">
+			</form>
+			<form action="register.php">
+					<input type="submit" value="I don't have an account">
 			</form>
 		</div>
 
 		<center>
-			<div class="account_button">
+			<!--<div class="account_button">
 				<a href="register.html">I don't have an account</a>
-			</div>
+			</div>-->
+
 		</center>
 
 	</body>
