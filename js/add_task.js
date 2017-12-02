@@ -2,7 +2,9 @@
 
 
 function addTask(){
-  var oldList = document.getElementById('first');
+  var choosenList= document.getElementById('myDropdown');
+  var choosenListValue= choosenList.options[choosenList.selectedIndex].value;
+  var oldList = document.getElementById(choosenListValue);
   var taskToAdd = document.querySelector('input[name=tasks]');
   var TaskToAddValue = taskToAdd.value;
   var createdTask = document.createElement("li");
