@@ -79,10 +79,11 @@ $stmt->execute();
 
 				<input type="submit" name="submit" value="submit">
 			</form>
+		
 		</div>
 		<center>
 			<div class="account_button">
-					<a href="login.html">I already have an account</a>
+					<a href="login.php">I already have an account</a>
 			</div>
 		</center>
 	</body>
