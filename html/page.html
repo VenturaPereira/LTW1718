@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-			<script  src="http://localhost/LTW1718/js/add_task.js"> </script>
+		<script  src="http://localhost/LTW1718/js/add_task.js"> </script>
+		<script src="http://localhost/LTW1718/js/dropdown_button.js"></script>
 		<title>Taskify</title>
 		<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
 	</head>
@@ -12,22 +13,21 @@
 
 				<div class="topbar">
 					<h2>Taskify</h2>
-					<a href="https://imgbb.com/"><img src="https://image.ibb.co/fHevub/user.png"></a>
+					<a href="mainpage.html"><img src="https://image.ibb.co/fHevub/user.png"></a>
 				</div>
 
 				<div class="sidenav">
-					<ul>
-						<li><h2>Welcome, User</h2></li>
-						<li><a href="#"> It works</a></li>
-						<li><a href="#"> It works</a></li>
-					</ul>
-
+					 <div class="list_dropdown">
+  						<button onclick="down()" class="dropbtn">Choose list...</button>
+  						<div id="myDropdown" class="dropdown">
+    						<a href="#">Link 1</a>
+    						<a href="#">Link 2</a>
+    						<a href="#">Link 3</a>
+  						</div>
+					</div> 
 				</div>
 
 				<div class="list_container">
-					<div class="list_dropdown">
-						<button type="button" data-toggle="dropdown">Choose list </button>
-					</div>
 					<div class="list_input">
 						<input type="text" placeholder="Add Task..." name="tasks">
 
@@ -57,23 +57,6 @@
 				</div>
 			</div>
 		</div>
-<!--
-		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-
-
-		<script>
-			function openNav() {
-			    document.getElementById("mySidenav").style.width = "250px";
-			}
-
-			function closeNav() {
-   	 				document.getElementById("mySidenav").style.width = "0";
-			}
-		</script>
--->
-
-
-
 	</body>
 
 </html>
