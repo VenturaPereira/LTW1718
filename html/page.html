@@ -3,6 +3,7 @@
 <html>
 	<head>
 			<script  src="http://localhost/LTW1718/js/add_task.js"> </script>
+			<script src="http://localhost/LTW1718/js/log_out.js"> </script>
 		<title>Taskify</title>
 		<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
 	</head>
@@ -12,7 +13,10 @@
 
 				<div class="topbar">
 					<h2>Taskify</h2>
-					<a href="https://imgbb.com/"><img src="https://image.ibb.co/fHevub/user.png"></a>
+					<a id="menu" onclick="toggleMenu();"><img src="https://image.ibb.co/fHevub/user.png"></a>
+						<ul id="menu_box" style="display: block">
+							<li><a href="login.php">Log Out</a></li>
+						</ul>
 				</div>
 
 				<div class="sidenav">
