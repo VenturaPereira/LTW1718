@@ -11,8 +11,8 @@ if(isset($_REQUEST['check'])){
 		$password= $_POST['password'];
    if(isLoginCorrect($mail,$password)){
 
-		 setCurrentUser($mail,$password);
-		  header('Location: page.html');
+		 setCurrentUser($mail);
+		  header('Location: page.php');
 	 }else{
 		echo "User isn't registered.";
 	 }
@@ -61,4 +61,3 @@ if(isset($_REQUEST['check'])){
 		</center>
 
 	</body>
-</html>
