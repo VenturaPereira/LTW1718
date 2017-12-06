@@ -1,17 +1,5 @@
 <?php
 include_once('init.php');
-function addList($name,$userID){
-    global $dbh;
-    $sqlToInsert='INSERT INTO todoList (name, userID) VALUES(:name, :userID)';
-    $stmt=$dbh->prepare($sqlToInsert);
-    //bbinding variables
-
-    $stmt->bindParam(':name',$name);
-    $stmt->bindParam(':userID',$userID);
-    // execute statement
-    $stmt->execute();
-}
-
 
 function getIdFromUser($email) {
 
@@ -72,10 +60,10 @@ function getIdFromUser($email) {
       $allTasks = $stmt->fetchAll();
       foreach($allTasks as $task){
         if($task['checked'] == 1){
-        echo "<input type='checkbox' onclick='markTask();' name='task' id=" . $listID ." value=" .$task['name'] . " checked='checked'><strike>" . $task['name'] ."</strike><br>";
+        echo "<input type='checkbox' onclick='markTask();' name='task' id=" . $listID ." value=" .$task['id'] . " checked='checked'> <span class='strike'>" . $task['name'] ."</span><br>";
       }
       else{
-        echo "<input type='checkbox'  onclick='markTask();' name='task' id=" . $listID . " value=" . $task['name'] . ">" . $task['name'] ."<br>";
+        echo "<input type='checkbox'  onclick='markTask();' name='task' id=" . $listID . " value=" . $task['id'] . "><span class='nostrike'> " . $task['name'] ."</span><br>";
       }
       }
 
@@ -91,6 +79,52 @@ function getIdFromUser($email) {
 
   }
 
+function addListToDb($name, $nameForClass, $user_id){
+  global $dbh;
+  $stmt = $dbh->prepare('INSERT INTO todoList (name, class, userID) VALUES (:name, :class, :userID)');
+  $stmt->bindParam(':name', $name);
+  $stmt->bindParam(':class', $nameForClass);
+  $stmt->bindParam(':userID', $user_id);
+  return $stmt->execute();
+}
+
+
+function getAllLists($userID){
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT * FROM todoList WHERE userID = ?');
+  $stmt-> execute(array($userID));
+  $listOfLists = $stmt->fetchAll();
+  foreach($listOfLists as $list){
+    echo "<div class=" . $list['class'] . "><ul id=" . $list['class'] . "><h2>" . $list['name'] . "</h2>";
+    getAllTasks($list['id']);
+    echo "</ul></div>";
+  }
+}
+
+function getOptionLists($userID){
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT * FROM todoList WHERE userID = ?');
+  $stmt-> execute(array($userID));
+  $listOfLists = $stmt->fetchAll();
+  foreach($listOfLists as $list){
+    echo "<option id=" . $list['id']. ">" . $list['name'] . "</option>";
+}
+}
+
+function getNumberOfLists($userID){
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT * FROM todoList WHERE userID = ?');
+  $stmt-> execute(array($userID));
+  $listOfLists = $stmt->fetchAll();
+  return sizeof($listOfLists);
+}
+
+function getAllTasksList($listID){
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT * FROM tasks WHERE listID = ?');
+  $stmt->execute(array($listID));
+  $allTasks = $stmt->fetchAll();
+}
 
 
 
