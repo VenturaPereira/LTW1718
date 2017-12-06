@@ -393,3 +393,7 @@ a{
 	grid-column-end: cend;
 	background-color: #FFF;
 }
+.strike{
+	text-decoration: line-through;
+	transition-duration: 1s;
+}

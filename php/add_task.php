@@ -72,10 +72,10 @@ function getIdFromUser($email) {
       $allTasks = $stmt->fetchAll();
       foreach($allTasks as $task){
         if($task['checked'] == 1){
-        echo "<input type='checkbox' onclick='markTask();' name='task' id=" . $listID ." value=" .$task['name'] . " checked='checked'><strike>" . $task['name'] ."</strike><br>";
+        echo "<input type='checkbox' onclick='markTask();' name='task' id=" . $listID ." value=" .$task['id'] . " checked='checked'> <span class='strike'>" . $task['name'] ."</span><br>";
       }
       else{
-        echo "<input type='checkbox'  onclick='markTask();' name='task' id=" . $listID . " value=" . $task['name'] . ">" . $task['name'] ."<br>";
+        echo "<input type='checkbox'  onclick='markTask();' name='task' id=" . $listID . " value=" . $task['id'] . "><span class='nostrike'> " . $task['name'] ."</span><br>";
       }
       }
 
