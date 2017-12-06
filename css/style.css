@@ -295,7 +295,7 @@ a{
 
 }
 
-.list_input {
+.list_container form {
 	display: flex;
 	flex-direction: row;
 	grid-row-start: r0;
@@ -305,13 +305,24 @@ a{
 	background-color: #FFF;
 }
 
+.form_input {
+	width: 430px;
+}
+
 .list_input input {
 	width: 550px;
 	height: 50px;
 }
 
+.add_list {
+	display: flex;
+	flex-direction: row;
+	padding-top: 30px;
+	padding-left: 3px;
+}
+
 .addBtn {
-    width: 25%;
+    width: 120px;
     height: 35px;
     background: #d9d9d9;
     color: #555;
@@ -319,7 +330,7 @@ a{
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
-    padding-top: 20px;
+    padding-top: 5px;
 }
 
 .List1 {

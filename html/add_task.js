@@ -9,7 +9,7 @@ function addTask(){
   var createdTask = document.createElement("li");
 
   let request = new XMLHttpRequest();
-//  request.addEventListener('load', receiveComments);
+
   request.open('POST', 'addSingleTask.php',false);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(encodeForAjax({name: taskToAddValue, listID: choosenListValue}));
@@ -17,13 +17,31 @@ function addTask(){
 }
 
 
+
+function markTask(){
+
+  var allTasks = document.getElementsByName('task');
+
+  var checkedTasks= [];
+  for(let i = 0; i < allTasks.length; i++){
+      if(allTasks[i].checked){
+        checkedTasks.push(allTasks[i]);
+      }
+  }
+  for(let b=0; b < checkedTasks.length;b++){
+  var task_valuee =(checkedTasks[b].value);
+  var list_ide = (checkedTasks[b].id);
+
+  let request = new XMLHttpRequest();
+  request.open('POST','updateTask.php',false);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  request.send(encodeForAjax({task_value: task_valuee, list_id: list_ide}));
+}
+window.location = window.location.href;
+}
+
 function encodeForAjax(data) {
   return Object.keys(data).map(function(k){
     return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
   }).join('&');
-}
-
-function receiveComments(data) {
-//alert(this.responseText);
-
 }
