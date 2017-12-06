@@ -22,15 +22,16 @@ function getIdFromUser($email) {
  }
 
 
- function addTaskToDb($name,$listID){
+ function addTaskToDb($name,$checked,$listID){
    global $dbh;
   // echo $name;
 //   echo $listID;
-   $sqlToInsert='INSERT INTO tasks (name, listID) VALUES(:name, :listID)';
+   $sqlToInsert='INSERT INTO tasks (name,checked, listID) VALUES(:name,:checked, :listID)';
    $stmt=$dbh->prepare($sqlToInsert);
    //bbinding variables
 
    $stmt->bindParam(':name',$name);
+   $stmt->bindParam(':checked',$checked);
    $stmt->bindParam(':listID',$listID);
    // execute statement
    $stmt->execute();
@@ -57,9 +58,11 @@ function getIdFromUser($email) {
 
   function getTask($name, $listID){
     global $dbh;
+    echo $name;
+    echo $listID;
     $stmt = $dbh->prepare('SELECT * FROM tasks WHERE name = ? AND listID = ?');
     $stmt->execute(array($name, $listID));
-    return $stmt->fetchAll();
+    return $stmt->fetch();
   }
 
   function getAllTasks($listID){
@@ -68,10 +71,26 @@ function getIdFromUser($email) {
       $stmt->execute(array($listID));
       $allTasks = $stmt->fetchAll();
       foreach($allTasks as $task){
-        echo "<li> " . $task['name']  . "</li>";
+        if($task['checked'] == 1){
+        echo "<input type='checkbox' onclick='markTask();' name='task' id=" . $listID ." value=" .$task['name'] . " checked='checked'><strike>" . $task['name'] ."</strike><br>";
+      }
+      else{
+        echo "<input type='checkbox'  onclick='markTask();' name='task' id=" . $listID . " value=" . $task['name'] . ">" . $task['name'] ."<br>";
+      }
       }
 
   }
+
+  function updateTasks($id){
+    global $dbh;
+    $checked = 1;
+    $stmt = $dbh->prepare('UPDATE tasks SET checked = :checked WHERE id= :id');
+    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':checked', $checked);
+    return $stmt->execute();
+
+  }
+
 
 
 

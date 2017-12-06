@@ -14,5 +14,6 @@ CREATE TABLE todoList (
 CREATE TABLE tasks (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
+  checked INTEGER,
   listID INTEGER REFERENCES todoList
 );

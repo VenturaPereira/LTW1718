@@ -66,7 +66,7 @@ if(doListsExist("List4",$curr_id)){
 	    						<option value ="List2">List 2</option>
 	    						<option value="List3">List 3</option>
 								</select>
-                  </form>
+              </form>
 					</div>
 				</div>
 
