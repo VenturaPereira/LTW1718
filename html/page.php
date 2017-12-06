@@ -7,29 +7,6 @@ include_once('C:\xampp\htdocs\LTW1718\php\add_task.php');
 $current_user = $_SESSION['username'];
 $curr_row= getIdFromUser($current_user);
 $curr_id= $curr_row['id'];
-if(doListsExist("List1",$curr_id)){
-
-}
-else{
-	addList("List1",$curr_id);
-}
-
-if(doListsExist("List2",$curr_id)){
-}
-else{
-	addList("List2",$curr_id);
-}
-
-if(doListsExist("List3",$curr_id)){
-}
-else{
-	addList("List3",$curr_id);
-
-}
-if(doListsExist("List4",$curr_id)){
-}else{
-	addList("List4",$curr_id);
-}
 
 
 
@@ -70,8 +47,10 @@ if(doListsExist("List4",$curr_id)){
 					</form>
 				</div>
 				<div class="add_list">
-					<input type="text">
-					<button class="dropbtn">Add list</button>
+					<form method="post">
+					<input type="text" placeholder="List title..." name="listToAdd">
+					<input type="submit" class="dropbtn" name="submit" value="Add it" onclick="addList();" >
+				</form>
 				</div>
 			</div>
 
@@ -82,48 +61,38 @@ if(doListsExist("List4",$curr_id)){
 
 					<input type="submit" class="addBtn" name="submit" value="Add" onclick="addTask();">
 				</form>
-				
+
+				<?php
+				$row = getIdFromUser($_SESSION['username']);
+				$id_from_userRow = $row['id'];
+				getAllLists($id_from_userRow);
+
+
+				 ?>
+<!--
 				<div class="List1">
 					<ul id="List1">
 
 						<h2>List 1</h2>
-						<?php
 
-
-						$list_id= getIdFromList($curr_id,"List1");
-
-						getAllTasks($list_id['id']);
-
-						?>
 					</ul>
 				</div>
 				<div class="List2">
 					<ul id="List2">
 						<h2>List 2</h2>
-						<?php
-						$list_id= getIdFromList($curr_id,"List2");
-						getAllTasks($list_id['id']);
-						?>
 					</ul>
 				</div>
 				<div class="List3">
 					<ul id="List3">
 						<h2>List 3</h2>
-						<?php
-						$list_id= getIdFromList($curr_id,"List3");
-						getAllTasks($list_id['id']);
-						?>
 					</ul>
 				</div>
 				<div class="List4">
 					<ul id="List4">
-						<?php
-						$list_id= getIdFromList($curr_id,"List4");
-						getAllTasks($list_id['id']);
-						?>
 						<h2>List 4</h2>
 					</ul>
 				</div>
+			-->
 			</div>
 		</div>
 	</div>

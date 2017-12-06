@@ -10,4 +10,10 @@ function isLoginCorrect($email, $password) {
     $stmt->execute(array($email, sha1($password)));
    return $stmt->fetch() !== false;
  }
+
+ function setNumberOfLists(){
+   if(!isset($_SESSION['lists'])){
+     $_SESSION['lists'] = 0;
+   }
+ }
  ?>

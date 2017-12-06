@@ -17,6 +17,23 @@ function addTask(){
 }
 
 
+function addList(){
+
+  var nameList = document.querySelector('input[name=listToAdd]');
+  var nameListValue = nameList.value;
+
+  let request = new XMLHttpRequest();
+  request.open('POST', 'addSingleList.php',false);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  request.send(encodeForAjax({nameForList: nameListValue}));
+
+}
+
+function wat(){
+alert(this.responseText);
+
+}
+
 
 function markTask(){
 
@@ -33,11 +50,12 @@ function markTask(){
   var list_ide = (checkedTasks[b].id);
 
   let request = new XMLHttpRequest();
+
   request.open('POST','updateTask.php',false);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(encodeForAjax({task_value: task_valuee, list_id: list_ide}));
 }
-window.location = window.location.href;
+//window.location = window.location.href;
 }
 
 function encodeForAjax(data) {
