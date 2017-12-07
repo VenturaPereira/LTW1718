@@ -8,6 +8,7 @@ CREATE TABLE user (
 CREATE TABLE todoList (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
+  class TEXT,
   userID INTEGER REFERENCES user
 );
 

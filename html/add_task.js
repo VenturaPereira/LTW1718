@@ -2,7 +2,7 @@
 
 function addTask(){
   var choosenList= document.getElementById('myDropdown');
-  var choosenListValue= choosenList.options[choosenList.selectedIndex].value;
+  var choosenListValue= choosenList.options[choosenList.selectedIndex].id;
   var oldList = document.getElementById(choosenListValue);
   var taskToAdd = document.querySelector('input[name=tasks]');
   var taskToAddValue = taskToAdd.value;
@@ -13,6 +13,19 @@ function addTask(){
   request.open('POST', 'addSingleTask.php',false);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(encodeForAjax({name: taskToAddValue, listID: choosenListValue}));
+
+}
+
+
+function addList(){
+
+  var nameList = document.querySelector('input[name=listToAdd]');
+  var nameListValue = nameList.value;
+
+  let request = new XMLHttpRequest();
+  request.open('POST', 'addSingleList.php',false);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  request.send(encodeForAjax({nameForList: nameListValue}));
 
 }
 
@@ -39,6 +52,7 @@ function markTask(){
 }
 window.location = window.location.href;
 }
+
 
 function encodeForAjax(data) {
   return Object.keys(data).map(function(k){
