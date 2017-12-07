@@ -29,6 +29,16 @@ function addList(){
 
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+function wat(){
+alert(this.responseText);
+
+}
+>>>>>>> 4fed517ca807e303a972659e7c47971fd9c69286
+>>>>>>> 23d80c059246bea0f7f5f956cd6326e69183ff8e
 
 
 function markTask(){
@@ -46,11 +56,12 @@ function markTask(){
   var list_ide = (checkedTasks[b].id);
 
   let request = new XMLHttpRequest();
+
   request.open('POST','updateTask.php',false);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(encodeForAjax({task_value: task_valuee, list_id: list_ide}));
 }
-window.location = window.location.href;
+//window.location = window.location.href;
 }
 
 

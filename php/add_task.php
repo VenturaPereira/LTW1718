@@ -89,6 +89,7 @@ function addListToDb($name, $nameForClass, $user_id){
 }
 
 
+
 function getAllLists($userID){
   global $dbh;
   $stmt = $dbh->prepare('SELECT * FROM todoList WHERE userID = ?');
