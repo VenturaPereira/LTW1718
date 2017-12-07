@@ -13,10 +13,15 @@ function isLoginCorrect($email, $password) {
  }
 
  function setNumberOfLists(){
+<<<<<<< HEAD
    $row_user = getIdFromUser($_SESSION['username']);
    $id_user = $row_user['id'];
    if(!isset($_SESSION['lists'])){
      $_SESSION['lists'] = getNumberOfLists($id_user);
+=======
+   if(!isset($_SESSION['lists'])){
+     $_SESSION['lists'] = 0;
+>>>>>>> 4fed517ca807e303a972659e7c47971fd9c69286
    }
  }
  ?>

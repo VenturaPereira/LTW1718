@@ -87,7 +87,24 @@ function addListToDb($name, $nameForClass, $user_id){
   $stmt->bindParam(':userID', $user_id);
   return $stmt->execute();
 }
+<<<<<<< HEAD
 
+=======
+/*<div class="List1">
+  <ul id="List1">
+
+    <h2>List 1</h2>
+    <?php
+
+
+    $list_id= getIdFromList($curr_id,"List1");
+
+    getAllTasks($list_id['id']);
+
+    ?>
+  </ul>
+</div>*/
+>>>>>>> 4fed517ca807e303a972659e7c47971fd9c69286
 
 function getAllLists($userID){
   global $dbh;
@@ -101,6 +118,7 @@ function getAllLists($userID){
   }
 }
 
+<<<<<<< HEAD
 function getOptionLists($userID){
   global $dbh;
   $stmt = $dbh->prepare('SELECT * FROM todoList WHERE userID = ?');
@@ -125,6 +143,8 @@ function getAllTasksList($listID){
   $stmt->execute(array($listID));
   $allTasks = $stmt->fetchAll();
 }
+=======
+>>>>>>> 4fed517ca807e303a972659e7c47971fd9c69286
 
 
 

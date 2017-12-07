@@ -63,12 +63,47 @@ $curr_id= $curr_row['id'];
 
 					<input type="submit" class="addBtn" name="submit" value="Add" onclick="addTask();">
 				</form>
+<<<<<<< HEAD
 
 				<?php
 				$row = getIdFromUser($_SESSION['username']);
 				$id_from_userRow = $row['id'];
 				getAllLists($id_from_userRow);
 				 ?>
+=======
+
+				<?php
+				$row = getIdFromUser($_SESSION['username']);
+				$id_from_userRow = $row['id'];
+				getAllLists($id_from_userRow);
+
+
+				 ?>
+<!--
+				<div class="List1">
+					<ul id="List1">
+
+						<h2>List 1</h2>
+
+					</ul>
+				</div>
+				<div class="List2">
+					<ul id="List2">
+						<h2>List 2</h2>
+					</ul>
+				</div>
+				<div class="List3">
+					<ul id="List3">
+						<h2>List 3</h2>
+					</ul>
+				</div>
+				<div class="List4">
+					<ul id="List4">
+						<h2>List 4</h2>
+					</ul>
+				</div>
+			-->
+>>>>>>> 4fed517ca807e303a972659e7c47971fd9c69286
 			</div>
 		</div>
 	</div>
