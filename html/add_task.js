@@ -57,6 +57,7 @@ function answerList(data){
   }
 }
 
+
 function markTask(){
 
   var allTasks = document.getElementsByName('task');
@@ -88,6 +89,7 @@ function markUpdate(){
     }
   }
 }
+
 
 function encodeForAjax(data) {
   return Object.keys(data).map(function(k){

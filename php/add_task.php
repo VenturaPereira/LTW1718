@@ -89,13 +89,21 @@ function addListToDb($name, $nameForClass, $user_id){
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 97e9d81516659fc8646e5c8acd9e6255fc85bca0
 function getAllLists($userID){
   global $dbh;
   $stmt = $dbh->prepare('SELECT * FROM todoList WHERE userID = ?');
   $stmt-> execute(array($userID));
   $listOfLists = $stmt->fetchAll();
   foreach($listOfLists as $list){
+<<<<<<< HEAD
     echo "<div id = " . $list['class'] . " class=" . $list['class'] . "><ul id=" . $list['class'] . "><h2>" . $list['name'] . " <a href='#' id=" . $list['id'] . " onclick='removeList();'><img src='https://image.ibb.co/bAQ5kG/x.png'></a> </h2>";
+=======
+    echo "<div class=" . $list['class'] . "><ul id=" . $list['class'] . "><h2>" . $list['name'] . "</h2>";
+>>>>>>> 97e9d81516659fc8646e5c8acd9e6255fc85bca0
     getAllTasks($list['id']);
     echo "</ul></div>";
   }

@@ -406,3 +406,7 @@ a{
 	transition-duration: 1s;
 	overflow-y: scroll;
 }
+.strike{
+	text-decoration: line-through;
+	transition-duration: 1s;
+}
