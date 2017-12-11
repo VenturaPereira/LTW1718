@@ -339,6 +339,7 @@ a{
 	grid-column-start: c1;
 	grid-column-end: c2;
 	background-color: #FFF;
+	overflow-y: scroll;
 }
 
 .List2 {
@@ -347,6 +348,7 @@ a{
 	grid-column-start: c2;
 	grid-column-end: c3;
 	background-color: #FFF;
+	overflow-y: scroll;
 }
 
 .List3 {
@@ -355,6 +357,7 @@ a{
 	grid-column-start: c3;
 	grid-column-end: c4;
 	background-color: #FFF;
+	overflow-y: scroll;
 }
 
 .List4 {
@@ -363,6 +366,7 @@ a{
 	grid-column-start: c4;
 	grid-column-end: cend;
 	background-color: #FFF;
+	overflow-y: scroll;
 }
 
 .List5 {
@@ -371,6 +375,7 @@ a{
 	grid-column-start: c1;
 	grid-column-end: c2;
 	background-color: #FFF;
+	overflow-y: scroll;
 }
 .List6 {
 	grid-row-start: r2;
@@ -378,6 +383,7 @@ a{
 	grid-column-start: c2;
 	grid-column-end: c3;
 	background-color: #FFF;
+	overflow-y: scroll;
 }
 .List7 {
 	grid-row-start: r2;
@@ -385,6 +391,7 @@ a{
 	grid-column-start: c3;
 	grid-column-end: c4;
 	background-color: #FFF;
+	overflow-y: scroll;
 }
 .List8 {
 	grid-row-start: r2;
@@ -392,10 +399,12 @@ a{
 	grid-column-start: c4;
 	grid-column-end: c5;
 	background-color: #FFF;
+	overflow-y: scroll;
 }
 .strike{
 	text-decoration: line-through;
 	transition-duration: 1s;
+	overflow-y: scroll;
 }
 
 .profile_container {

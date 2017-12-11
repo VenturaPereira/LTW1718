@@ -26,6 +26,7 @@ $curr_id= $curr_row['id'];
 	<div class="bg">
 		<div class="profilepage_container">
 
+
 			<div class="topbar">
 				<h2>Taskify</h2>
 				<a id="menu" onclick="toggleMenu();"><img src="https://image.ibb.co/fHevub/user.png"></a>
@@ -39,9 +40,14 @@ $curr_id= $curr_row['id'];
 					<button onclick="down()" class="dropbtn">Choose list...</button>
 					<form method="post">
 						<select name="myDropdown" id ="myDropdown" class="dropdown" >
-							<option value="List1">List 1</option>
-							<option value ="List2">List 2</option>
-							<option value="List3">List 3</option>
+							<div id="list_int"> </div>
+							<?php
+							$row_user = getIdFromUser($_SESSION['username']);
+							$id_user = $row_user['id'];
+							getOptionLists($id_user);
+
+							?>
+
 						</select>
 
 					</form>
@@ -66,8 +72,6 @@ $curr_id= $curr_row['id'];
 				$row = getIdFromUser($_SESSION['username']);
 				$id_from_userRow = $row['id'];
 				getAllLists($id_from_userRow);
-
-
 				 ?>
 			</div>
 		</div>

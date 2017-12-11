@@ -87,20 +87,6 @@ function addListToDb($name, $nameForClass, $user_id){
   $stmt->bindParam(':userID', $user_id);
   return $stmt->execute();
 }
-/*<div class="List1">
-  <ul id="List1">
-
-    <h2>List 1</h2>
-    <?php
-
-
-    $list_id= getIdFromList($curr_id,"List1");
-
-    getAllTasks($list_id['id']);
-
-    ?>
-  </ul>
-</div>*/
 
 function getAllLists($userID){
   global $dbh;
@@ -108,13 +94,59 @@ function getAllLists($userID){
   $stmt-> execute(array($userID));
   $listOfLists = $stmt->fetchAll();
   foreach($listOfLists as $list){
-    echo "<div class=" . $list['class'] . "><ul id=" . $list['class'] . "><h2>" . $list['name'] . "</h2>";
+    echo "<div  id = " . $list['class'] . " class=" . $list['class'] . " ><ul id=" . $list['class'] . " name='lists' ><h2>" . $list['name'] . " <a href='#' id=" . $list['id'] . " onclick='removeList();'><img src='https://image.ibb.co/bAQ5kG/x.png'></a> </h2>";
     getAllTasks($list['id']);
     echo "</ul></div>";
   }
 }
 
+function getOptionLists($userID){
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT * FROM todoList WHERE userID = ?');
+  $stmt-> execute(array($userID));
+  $listOfLists = $stmt->fetchAll();
+  foreach($listOfLists as $list){
+    echo "<option id=" . $list['id']. ">" . $list['name'] . "</option>";
+}
+}
 
+function getNumberOfLists($userID){
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT * FROM todoList WHERE userID = ?');
+  $stmt-> execute(array($userID));
+  $listOfLists = $stmt->fetchAll();
+  return sizeof($listOfLists);
+}
+
+function getAllTasksList($listID){
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT * FROM tasks WHERE listID = ?');
+  $stmt->execute(array($listID));
+  $allTasks = $stmt->fetchAll();
+}
+
+function deleteList($listID){
+  global $dbh;
+  $stmt = $dbh->prepare('DELETE FROM todoList WHERE id = :id');
+  $stmt->bindParam(':id', $listID);
+  $stmt->execute();
+  return $stmt->fetch();
+}
+
+function getAllListsToUpdate($userID){
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT * FROM todoList WHERE userID = ?');
+  $stmt-> execute(array($userID));
+  return $stmt->fetchAll();
+}
+
+function updateList($id, $class){
+  global $dbh;
+  $stmt = $dbh->prepare('UPDATE todoList SET class = :class WHERE id= :id');
+  $stmt->bindParam(':id', $id);
+  $stmt->bindParam(':class', $class);
+  return $stmt->execute();
+}
 
 
  ?>

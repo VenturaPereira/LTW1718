@@ -2,6 +2,7 @@
 
 
 include_once('init.php');
+include_once('add_task.php');
 function isLoginCorrect($email, $password) {
 
    global $dbh;
@@ -12,8 +13,10 @@ function isLoginCorrect($email, $password) {
  }
 
  function setNumberOfLists(){
+   $row_user = getIdFromUser($_SESSION['username']);
+   $id_user = $row_user['id'];
    if(!isset($_SESSION['lists'])){
-     $_SESSION['lists'] = 0;
+     $_SESSION['lists'] = getNumberOfLists($id_user);
    }
  }
  ?>

@@ -1,8 +1,7 @@
 
-
 function addTask(){
   var choosenList= document.getElementById('myDropdown');
-  var choosenListValue= choosenList.options[choosenList.selectedIndex].value;
+  var choosenListValue= choosenList.options[choosenList.selectedIndex].id;
   var oldList = document.getElementById(choosenListValue);
   var taskToAdd = document.querySelector('input[name=tasks]');
   var taskToAddValue = taskToAdd.value;
@@ -16,24 +15,52 @@ function addTask(){
 
 }
 
+function removeList(){
+  let  aEle = document.querySelectorAll("a");
+  for(let a = 0; a < aEle.length; a++)  {
+        aEle[a].addEventListener("click",function(){
+       if(aEle[a].id> 0 ){
+        let request = new XMLHttpRequest();
+        request.addEventListener('load', working);
+        request.open('POST', 'removeList.php',true);
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        request.send(encodeForAjax({listID: aEle[a].id}));
+        window.location = window.location.href;
+      }
+    });
+  }
+}
+
+function working(){
+  let answerJson = JSON.parse(this.responseText);
+
+
+  let reposition = document.getElementsByName('lists');
+  document.getElementById(answerJson).remove();
+  let counter = 1;
+ for(let a=0; a < reposition.length; a++){
+      reposition[a].parentElement.className="List"+counter;
+      counter++;
+  }
+}
 
 function addList(){
-
   var nameList = document.querySelector('input[name=listToAdd]');
   var nameListValue = nameList.value;
-
   let request = new XMLHttpRequest();
+  request.addEventListener('load',answerList);
   request.open('POST', 'addSingleList.php',false);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(encodeForAjax({nameForList: nameListValue}));
-
 }
 
-function wat(){
-alert(this.responseText);
-
+function answerList(data){
+ alert(this.responseText);
+  let answerJson = JSON.parse(this.responseText);
+  if(answerJson == "yes"){
+    alert("Can't add more tasks. Delete one.");
+  }
 }
-
 
 function markTask(){
 
@@ -50,13 +77,23 @@ function markTask(){
   var list_ide = (checkedTasks[b].id);
 
   let request = new XMLHttpRequest();
-
+  request.addEventListener('load',markUpdate);
   request.open('POST','updateTask.php',false);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(encodeForAjax({task_value: task_valuee, list_id: list_ide}));
+  }
 }
-//window.location = window.location.href;
+
+function markUpdate(){
+  let answerJson = JSON.parse(this.responseText);
+  let allTasks = document.getElementsByName("task");
+  for(let b = 0; b < allTasks.length; b++ ){
+    if(answerJson  == allTasks[b].value){
+      allTasks[b].nextSibling.className="strike";
+    }
+  }
 }
+
 
 function encodeForAjax(data) {
   return Object.keys(data).map(function(k){
