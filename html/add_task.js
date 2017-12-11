@@ -25,7 +25,7 @@ function removeList(){
         request.open('POST', 'removeList.php',true);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         request.send(encodeForAjax({listID: aEle[a].id}));
-        window.location = window.location.href;
+        window.location.reload(true);
       }
     });
   }
