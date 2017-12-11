@@ -7,29 +7,6 @@ include_once('C:\xampp\htdocs\LTW1718\php\add_task.php');
 $current_user = $_SESSION['username'];
 $curr_row= getIdFromUser($current_user);
 $curr_id= $curr_row['id'];
-if(doListsExist("List1",$curr_id)){
-
-}
-else{
-	addList("List1",$curr_id);
-}
-
-if(doListsExist("List2",$curr_id)){
-}
-else{
-	addList("List2",$curr_id);
-}
-
-if(doListsExist("List3",$curr_id)){
-}
-else{
-	addList("List3",$curr_id);
-
-}
-if(doListsExist("List4",$curr_id)){
-}else{
-	addList("List4",$curr_id);
-}
 
 
 
@@ -49,6 +26,7 @@ if(doListsExist("List4",$curr_id)){
 	<div class="bg">
 		<div class="profilepage_container">
 
+
 			<div class="topbar">
 				<h2>Taskify</h2>
 				<a id="menu" onclick="toggleMenu();"><img src="https://image.ibb.co/fHevub/user.png"></a>
@@ -62,16 +40,23 @@ if(doListsExist("List4",$curr_id)){
 					<button onclick="down()" class="dropbtn">Choose list...</button>
 					<form method="post">
 						<select name="myDropdown" id ="myDropdown" class="dropdown" >
-							<option value="List1">List 1</option>
-							<option value ="List2">List 2</option>
-							<option value="List3">List 3</option>
+							<div id="list_int"> </div>
+							<?php
+							$row_user = getIdFromUser($_SESSION['username']);
+							$id_user = $row_user['id'];
+							getOptionLists($id_user);
+
+							?>
+
 						</select>
 
 					</form>
 				</div>
 				<div class="add_list">
-					<input type="text">
-					<button class="dropbtn">Add list</button>
+					<form method="post">
+					<input type="text" placeholder="List title..." name="listToAdd">
+					<input type="submit" class="dropbtn" name="submit" value="Add it" onclick="addList();" >
+				</form>
 				</div>
 			</div>
 
@@ -82,48 +67,12 @@ if(doListsExist("List4",$curr_id)){
 
 					<input type="submit" class="addBtn" name="submit" value="Add" onclick="addTask();">
 				</form>
-				
-				<div class="List1">
-					<ul id="List1">
 
-						<h2>List 1</h2>
-						<?php
-
-
-						$list_id= getIdFromList($curr_id,"List1");
-
-						getAllTasks($list_id['id']);
-
-						?>
-					</ul>
-				</div>
-				<div class="List2">
-					<ul id="List2">
-						<h2>List 2</h2>
-						<?php
-						$list_id= getIdFromList($curr_id,"List2");
-						getAllTasks($list_id['id']);
-						?>
-					</ul>
-				</div>
-				<div class="List3">
-					<ul id="List3">
-						<h2>List 3</h2>
-						<?php
-						$list_id= getIdFromList($curr_id,"List3");
-						getAllTasks($list_id['id']);
-						?>
-					</ul>
-				</div>
-				<div class="List4">
-					<ul id="List4">
-						<?php
-						$list_id= getIdFromList($curr_id,"List4");
-						getAllTasks($list_id['id']);
-						?>
-						<h2>List 4</h2>
-					</ul>
-				</div>
+				<?php
+				$row = getIdFromUser($_SESSION['username']);
+				$id_from_userRow = $row['id'];
+				getAllLists($id_from_userRow);
+				 ?>
 			</div>
 		</div>
 	</div>
