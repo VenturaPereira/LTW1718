@@ -33,6 +33,8 @@ function removeList(){
 
 function working(){
   let answerJson = JSON.parse(this.responseText);
+
+
   let reposition = document.getElementsByName('lists');
   document.getElementById(answerJson).remove();
   let counter = 1;
@@ -42,11 +44,9 @@ function working(){
   }
 }
 
-
 function addList(){
   var nameList = document.querySelector('input[name=listToAdd]');
   var nameListValue = nameList.value;
-
   let request = new XMLHttpRequest();
   request.addEventListener('load',answerList);
   request.open('POST', 'addSingleList.php',false);
@@ -81,7 +81,7 @@ function markTask(){
   request.open('POST','updateTask.php',false);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(encodeForAjax({task_value: task_valuee, list_id: list_ide}));
-}
+  }
 }
 
 function markUpdate(){
@@ -93,6 +93,7 @@ function markUpdate(){
     }
   }
 }
+
 
 function encodeForAjax(data) {
   return Object.keys(data).map(function(k){
