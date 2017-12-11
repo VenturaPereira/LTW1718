@@ -59,6 +59,11 @@ $curr_id= $curr_row['id'];
 				</form>
 				</div>
 			</div>
+			<div>
+				<form action="profilepage.php">
+						<input type="submit" value="Edit profile">
+				</form>
+			</div>
 
 
 			<div class="list_container">

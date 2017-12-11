@@ -25,7 +25,7 @@ function removeList(){
         request.open('POST', 'removeList.php',true);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         request.send(encodeForAjax({listID: aEle[a].id}));
-        window.location = window.location.href;
+        window.location.reload(true);
       }
     });
   }
@@ -33,8 +33,6 @@ function removeList(){
 
 function working(){
   let answerJson = JSON.parse(this.responseText);
-
-
   let reposition = document.getElementsByName('lists');
   document.getElementById(answerJson).remove();
   let counter = 1;

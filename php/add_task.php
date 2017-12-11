@@ -148,5 +148,4 @@ function updateList($id, $class){
   return $stmt->execute();
 }
 
-
  ?>
