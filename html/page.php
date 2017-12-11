@@ -69,30 +69,6 @@ $curr_id= $curr_row['id'];
 
 
 				 ?>
-<!--
-				<div class="List1">
-					<ul id="List1">
-
-						<h2>List 1</h2>
-
-					</ul>
-				</div>
-				<div class="List2">
-					<ul id="List2">
-						<h2>List 2</h2>
-					</ul>
-				</div>
-				<div class="List3">
-					<ul id="List3">
-						<h2>List 3</h2>
-					</ul>
-				</div>
-				<div class="List4">
-					<ul id="List4">
-						<h2>List 4</h2>
-					</ul>
-				</div>
-			-->
 			</div>
 		</div>
 	</div>

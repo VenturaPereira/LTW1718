@@ -397,3 +397,28 @@ a{
 	text-decoration: line-through;
 	transition-duration: 1s;
 }
+
+.profile_container {
+	display: grid;
+	height: 90%;
+	width: 90%;
+	grid-template-columns: [co1] auto [co2] 250px [co3] auto [co4];
+ 	grid-template-rows: [rw0] 100px [rw1] auto [rw2] 150px [rw3];
+}
+
+.profile_container form {
+	grid-column-start: co2;
+	grid-column-end: co3;
+	grid-row-start: rw1;
+	grid-row-end: rw2;
+}
+
+.profile_container form input {
+	width: 400px;
+    padding: 12px 20px;
+    margin-top: 100px;
+    margin: 16px auto;
+    box-sizing: border-box;
+    border-radius: 4px;	
+}
+
