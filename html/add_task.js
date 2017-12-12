@@ -20,6 +20,7 @@ function removeList(){
   for(let a = 0; a < aEle.length; a++)  {
         aEle[a].addEventListener("click",function(){
        if(aEle[a].id> 0 ){
+        alert("removing...");
         let request = new XMLHttpRequest();
         request.addEventListener('load', working);
         request.open('POST', 'removeList.php',true);
