@@ -9,6 +9,13 @@ function getIdFromUser($email) {
    return $stmt->fetch();
  }
 
+ function getAllFromUser($email) {
+
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM user WHERE email = ?');
+     $stmt->execute(array($email));
+    return $stmt->fetch();
+  }
 
  function addTaskToDb($name,$checked,$listID){
    global $dbh;
@@ -78,7 +85,15 @@ function getIdFromUser($email) {
     return $stmt->execute();
 
   }
-
+  function updateUser($email, $newEmail, $newPassword){
+    global $dbh;
+    $coded= sha1($newPassword);
+    $stmt = $dbh->prepare('UPDATE user SET email = :newEmail, password = :password WHERE email= :email');
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':newEmail', $newEmail);
+    $stmt->bindParam(':password', $coded);
+    return $stmt->execute();
+  }
 function addListToDb($name, $nameForClass, $user_id){
   global $dbh;
   $stmt = $dbh->prepare('INSERT INTO todoList (name, class, userID) VALUES (:name, :class, :userID)');
