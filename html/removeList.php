@@ -1,9 +1,8 @@
 <?php
 
-include_once('C:\xampp\htdocs\LTW1718\php\init.php');
-include_once('C:\xampp\htdocs\LTW1718\php\add_task.php');
+include_once('../php/init.php');
+include_once('../php/add_task.php');
 $listID = $_POST['listID'];
-$toDelete = "List" . $listID;
 deleteList($listID);
 $row_from_user = getIdFromUser($_SESSION['username']);
 $id_from_user = $row_from_user['id'];
@@ -14,5 +13,5 @@ foreach($listOfLists as $list) {
   updateList($list['id'],$class);
   $counter= $counter+1;
 }
-echo json_encode($toDelete);
+echo json_encode($listID);
  ?>

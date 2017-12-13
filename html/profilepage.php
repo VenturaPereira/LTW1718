@@ -27,7 +27,7 @@
 			<a href="page.php" class="backbtn">Back to Task Page &raquo;</a>
 		</div>
 		<form class="form_info" method="post" onsubmit="return handler();">
-			<script src="http://localhost/LTW1718/js/change_profile.js"> </script>
+			<script src="../js/change_profile.js"> </script>
 			<input type="email" placeholder="Email" name="email">
 			<div id="dont_exist"></div>
 			<input type="email" placeholder="New email" name="new_email">

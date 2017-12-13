@@ -1,6 +1,6 @@
 <div class="registerValidation">
 <?php
-include_once('C:\xampp\htdocs\LTW1718\php\init.php');
+include_once('../php/init.php');
 
 if(isset($_REQUEST['check'])){
 
@@ -51,7 +51,7 @@ $stmt->execute();
 		</div>
 		<div class="container_register">
 			<form action="register.php?check" method="post" onsubmit="return handler();">
-				<script  src="http://localhost/LTW1718/js/register_validation.js"> </script>
+				<script  src="../js/register_validation.js"> </script>
 				<div class="form_input">
 					<input type="text" placeholder="FirstName" name="firstName" required>
 				</div>
@@ -79,7 +79,7 @@ $stmt->execute();
 
 				<input type="submit" name="submit" value="submit">
 			</form>
-		
+
 		</div>
 		<center>
 			<div class="account_button">
