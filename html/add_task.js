@@ -20,13 +20,11 @@ function removeList(){
   for(let a = 0; a < aEle.length; a++)  {
         aEle[a].addEventListener("click",function(){
        if(aEle[a].id> 0 ){
-        alert("removing...");
         let request = new XMLHttpRequest();
         request.addEventListener('load', working);
-        request.open('POST', 'removeList.php',true);
+        request.open('POST', 'removeList.php',false);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         request.send(encodeForAjax({listID: aEle[a].id}));
-        window.location.reload(true);
       }
     });
   }
@@ -35,7 +33,9 @@ function removeList(){
 function working(){
   let answerJson = JSON.parse(this.responseText);
   let reposition = document.getElementsByName('lists');
+  while(document.getElementById(answerJson) != null){
   document.getElementById(answerJson).remove();
+  }
   let counter = 1;
  for(let a=0; a < reposition.length; a++){
       reposition[a].parentElement.className="List"+counter;

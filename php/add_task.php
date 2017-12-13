@@ -109,7 +109,7 @@ function getAllLists($userID){
   $stmt-> execute(array($userID));
   $listOfLists = $stmt->fetchAll();
   foreach($listOfLists as $list){
-    echo "<div  id = " . $list['class'] . " class=" . $list['class'] . " ><ul id=" . $list['class'] . " name='lists' ><h2>" . $list['name'] . " <a href='#' id=" . $list['id'] . " onclick='removeList();'><img class='remove_icon' src='https://thumb.ibb.co/m4ONLG/cross.jpg' height='15' width='15'></a> </h2>";
+    echo "<div  id = " . $list['id'] . " class=" . $list['class'] . " ><ul id=" . $list['class'] . " name='lists' ><h2>" . $list['name'] . " <a href='#' id=" . $list['id'] . " onclick='removeList();'><img class='remove_icon' src='https://thumb.ibb.co/m4ONLG/cross.jpg' height='15' width='15'></a> </h2>";
     getAllTasks($list['id']);
     echo "</ul></div>";
   }
