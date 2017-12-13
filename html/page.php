@@ -24,7 +24,6 @@ $curr_id= $curr_row['id'];
 	<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
 </head>
 <body>
-	<div class="bg">
 		<div class="profilepage_container">
 			<div class="topbar">
 				<div class="logo_title">
@@ -34,7 +33,7 @@ $curr_id= $curr_row['id'];
 				<div class="user_menu_dropdown">
 					<a id="menu" class="dropdown_icon"><img src="https://image.ibb.co/fHevub/user.png" class="user_icon"></a>
 					<div id="userMenu" class="user_menu">
-						<a href="profilepage.html">Preferences</a>
+						<a href="profilepage.php">Preferences</a>
 						<a href="logOut.php">Log Out</a>
 					</div>
 				</div>
@@ -49,7 +48,6 @@ $curr_id= $curr_row['id'];
 					</form>
 				</div>
 			</div>
-
 
 			<div class="list_container">
 				<div class="task_manager">
@@ -83,5 +81,4 @@ $curr_id= $curr_row['id'];
 				?>
 			</div>
 		</div>
-	</div>
 </body>

@@ -34,8 +34,6 @@ function removeList(){
 
 function working(){
   let answerJson = JSON.parse(this.responseText);
-
-
   let reposition = document.getElementsByName('lists');
   document.getElementById(answerJson).remove();
   let counter = 1;

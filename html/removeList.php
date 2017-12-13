@@ -15,5 +15,4 @@ foreach($listOfLists as $list) {
   $counter= $counter+1;
 }
 echo json_encode($toDelete);
-header('Location: http://localhost/LTW1718/html/page.php');
  ?>

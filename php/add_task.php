@@ -9,6 +9,13 @@ function getIdFromUser($email) {
    return $stmt->fetch();
  }
 
+ function getAllFromUser($email) {
+
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM user WHERE email = ?');
+     $stmt->execute(array($email));
+    return $stmt->fetch();
+  }
 
  function addTaskToDb($name,$checked,$listID){
    global $dbh;
@@ -78,7 +85,15 @@ function getIdFromUser($email) {
     return $stmt->execute();
 
   }
-
+  function updateUser($email, $newEmail, $newPassword){
+    global $dbh;
+    $coded= sha1($newPassword);
+    $stmt = $dbh->prepare('UPDATE user SET email = :newEmail, password = :password WHERE email= :email');
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':newEmail', $newEmail);
+    $stmt->bindParam(':password', $coded);
+    return $stmt->execute();
+  }
 function addListToDb($name, $nameForClass, $user_id){
   global $dbh;
   $stmt = $dbh->prepare('INSERT INTO todoList (name, class, userID) VALUES (:name, :class, :userID)');
@@ -94,7 +109,7 @@ function getAllLists($userID){
   $stmt-> execute(array($userID));
   $listOfLists = $stmt->fetchAll();
   foreach($listOfLists as $list){
-    echo "<div  id = " . $list['class'] . " class=" . $list['class'] . " ><ul id=" . $list['class'] . " name='lists' ><h2>" . $list['name'] . " <a href='#' id=" . $list['id'] . " onclick='removeList();'><img class='remove_icon'src='https://image.ibb.co/bAQ5kG/x.png'></a> </h2>";
+    echo "<div  id = " . $list['class'] . " class=" . $list['class'] . " ><ul id=" . $list['class'] . " name='lists' ><h2>" . $list['name'] . " <a href='#' id=" . $list['id'] . " onclick='removeList();'><img class='remove_icon' src='https://thumb.ibb.co/m4ONLG/cross.jpg' height='15' width='15'></a> </h2>";
     getAllTasks($list['id']);
     echo "</ul></div>";
   }
@@ -147,6 +162,5 @@ function updateList($id, $class){
   $stmt->bindParam(':class', $class);
   return $stmt->execute();
 }
-
 
  ?>

@@ -4,24 +4,15 @@ html, body{
 	margin: 0 0;
 	width: 100%;
 	height: 100%;
-	background-color: #ffb368;
+	/*background-color: #ffb368;
+	background-image: "https://preview.ibb.co/ist6fG/sunset_5120x2880_desert_dunes_minimal_5k_5603.jpg";*/
+
 }
 
-.bg {
-    /* The image used */
-    background-image: "https://hdqwalls.com/download/spike-spiegel-minimalism-2d-3840x2160.jpg";
-
-    /* Full height */
-
-    width: 100%;
-	height: 100%;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+    background: url('https://wallpapersite.com/images/wallpapers/sunset-5120x2880-desert-dunes-minimal-5k-5603.jpg') no-repeat;
+    background-size: 100% 100%;
 }
-
-
 /*Main page styling*/
 
 .mainpage_text{
@@ -214,6 +205,10 @@ a{
     cursor: pointer;
 }
 
+.user_icon:hover {
+	transform: scale(0.9);
+}
+
 .logo_title {
 	display: flex;
 	flex-direction: row;
@@ -250,6 +245,14 @@ a{
     display: block;
    
 }
+
+.user_menu a:hover {
+	background-color: black;
+    color: white;
+   
+}
+
+
 
 .user_menu_dropdown:hover .user_menu {
 	display: block;
@@ -320,6 +323,11 @@ a{
     cursor: pointer;
 	width: 150px;
 	height: 35px;
+}
+
+.list_dropbtn:hover {
+	background-color: #818181;
+	color: #000; 
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -501,22 +509,51 @@ a{
 
 .profile_container {
 	display: grid;
-	height: 90%;
-	width: 90%;
-	grid-template-columns: [co1] auto [co2] 250px [co3] auto [co4];
+	height: 100%;
+	width: 100%;
+	grid-template-columns: [co1] 575px [co2] 250px [co3] 500px [co4];
  	grid-template-rows: [rw0] 100px [rw1] auto [rw2] 150px [rw3];
 }
 
-.profile_container form {
+.back_button_area {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	grid-row-start: rw0;
+	grid-row-end: rw1;
+	grid-column-start: co3;
+	grid-column-end: co4;
+
+}
+
+.back_button_area a {
+    text-decoration: none;
+   	height: 25px;
+    padding: 8px 16px;
+}
+
+.backbtn {
+    background-color: #000;
+    color: #818181;
+    font-size: 18px;
+    border: 2px solid #818181;
+}
+
+.backbtn:hover {
+	background-color: #818181;
+    color: #000;
+}
+
+.form_info {
 	grid-column-start: co2;
 	grid-column-end: co3;
 	grid-row-start: rw1;
 	grid-row-end: rw2;
 }
 
-.profile_container form input {
+.form_info input {
 	width: 400px;
-    padding: 12px 20px;
+    padding: 12px 20px 12px 30px;
     margin-top: 100px;
     margin: 16px auto;
     box-sizing: border-box;

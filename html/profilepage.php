@@ -1,12 +1,5 @@
-
-<?php
-
-include_once('C:\xampp\htdocs\LTW1718\php\session.php');
-include_once('C:\xampp\htdocs\LTW1718\php\add_task.php');
-
-?>
-
-
+<!DOCTYPE html>
+<html>
 <head>
 	<title>Taskify</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
@@ -28,22 +21,25 @@ include_once('C:\xampp\htdocs\LTW1718\php\add_task.php');
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="profile_container">
-		<form class="upload_image" action="upload.php" method="POST" enctype="multypart/form-data">
-			<input type="file" name="file">
-			<button type="submit" name="submit">Upload</button>
-		</form>
-		<form class="form_info">
+		<div class="back_button_area">
+			<a href="page.php" class="backbtn">Back to Task Page &raquo;</a>
+		</div>
+		<form class="form_info" method="post" onsubmit="return handler();">
+			<script src="http://localhost/LTW1718/js/change_profile.js"> </script>
 			<input type="email" placeholder="Email" name="email">
+			<div id="dont_exist"></div>
 			<input type="email" placeholder="New email" name="new_email">
 			<input type="password" placeholder="Password" name="password">
+			<div id="pw_wrong"></div>
 			<input type="password" placeholder="New password" name="new_password">
 			<input type="password" placeholder="Confirm new password" name="confim_new_password">
-			<input type="submit" name="submit" value="Save">
+			<div id="match_pw"></div>
+			<input type="submit" name="submit" value="submit">
 		</form>
-		
 	</div>
-	
+
+
 </body>
 </html>
