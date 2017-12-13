@@ -2,7 +2,8 @@
 include_once('../php/init.php');
 include_once('../php/add_task.php');
 
-$password = $_POST['password'];
+$salt = "forcaporto258";
+$password = $_POST['password'].$salt;
 
 $email = $_SESSION['username'];
 $user_row = getAllFromUser($email);

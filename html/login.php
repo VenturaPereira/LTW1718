@@ -4,11 +4,11 @@
 <?php
 include_once('../php/login_session.php');
 include_once('../php/init.php');
-
 if(isset($_REQUEST['sign_in'])){
 if(isset($_REQUEST['check'])){
+	$salt = "forcaporto258";
 		$mail= $_POST['email'];
-		$password= $_POST['password'];
+		$password= $_POST['password'].$salt;
    if(isLoginCorrect($mail,$password)){
 		 setCurrentUser($mail);
 		 setNumberOfLists();

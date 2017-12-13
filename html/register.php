@@ -6,7 +6,9 @@ if(isset($_REQUEST['check'])){
 
 $firstName= $_POST['firstName'];
 $lastName= $_POST['lastName'];
-$password= sha1($_POST['password']);
+$salt = "forcaporto258";
+$password = $_POST['password'].$salt;
+$password= sha1($password);
 $email = $_POST['email'];
 $name = $firstName . $lastName;
 $confirmPassword= $_POST['confirmPassword'];
