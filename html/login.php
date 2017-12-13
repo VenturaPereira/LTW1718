@@ -28,7 +28,10 @@ if(isset($_REQUEST['check'])){
 	<body>
 		<div class="mainpage_text">
 			<center>
-				<h1>Taskify</h1>
+				<div class="titleAndLogo">
+					<a href="#"><img src="https://image.ibb.co/c4d3aG/logo.png" class="logo"></a>
+					<h1>Taskify</h1>
+				</div>
 			</center>
 
 			<center>
@@ -45,19 +48,16 @@ if(isset($_REQUEST['check'])){
 				<div class="form_input">
 					<input type="password" placeholder="Password" name="password" required>
 				</div>
-				<input type="submit" name="sign_in" value="Sign in" >
+				<div class="submit_button">
+					<input type="submit" name="sign_in" value="Sign in" >
+				</div>
 
 			</form>
 			<form action="register.php">
+				<div class="submit_button">
 					<input type="submit" value="I don't have an account">
+				</div>
 			</form>
 		</div>
-
-		<center>
-			<!--<div class="account_button">
-				<a href="register.html">I don't have an account</a>
-			</div>-->
-
-		</center>
 
 	</body>

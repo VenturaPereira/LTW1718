@@ -15,6 +15,11 @@ body {
 }
 /*Main page styling*/
 
+.titleAndLogo{
+	display: flex;
+	width: 250px;
+}
+
 .mainpage_text{
 	width: 500px;
 	height: 400px;
@@ -140,13 +145,29 @@ a{
 	text-decoration: none;
 	color: #FFFFFF;
 }
+
+.account_button input{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.submit_button input[type=submit] {
+	padding:5px 15px; 
+    background:#000;
+   	color: #FFF; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
 /*Login stying*/
 
 
 
 .container_login{
 	width: 500px;
-	height: 380px;
+	height: 250px;
 	text-align: center;
 	border-radius: 4px;
 	margin: 0 auto;
@@ -164,6 +185,7 @@ a{
 	margin-top: -50px;
 	margin-bottom: -50px;
 	opacity: 0.7;
+	padding-left: 50px;
 }
 
 .login_message h3{
@@ -171,7 +193,7 @@ a{
 }
 
 
-/* Profile page styling */
+/* Task page styling */
 
 .profilepage_container {
 	display: grid;
@@ -294,8 +316,6 @@ a{
 }
 
 .list_dropdown {
-	/*padding-left: 16px;
-    padding-top: 32px;*/
     height: 30px;
     background-color: #000;
     color: #818181;
@@ -330,13 +350,11 @@ a{
 	color: #000; 
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown {
     display: none;
     position: absolute;
@@ -346,7 +364,6 @@ a{
     z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown a {
     color: black;
     padding: 12px 16px;
@@ -354,10 +371,8 @@ a{
     display: block;
 }
 
-/* Change color of dropdown links on hover */
 .dropdown a:hover {background-color: #f1f1f1}
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
 
@@ -390,6 +405,7 @@ a{
 
 .form_input {
 	width: 430px;
+	margin: auto;
 }
 
 .list_input input {
@@ -511,6 +527,8 @@ a{
 	transition-duration: 1s;
 	overflow-y: auto;
 }
+
+/*Profile page styling*/
 
 .profile_container {
 	display: grid;

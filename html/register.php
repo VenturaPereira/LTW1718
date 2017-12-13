@@ -42,8 +42,11 @@ $stmt->execute();
 	<body>
 		<div class="mainpage_text">
 			<center>
-				<h1>Taskify</h1>
-			</center>
+				<div class="titleAndLogo">
+					<a href="#"><img src="https://image.ibb.co/c4d3aG/logo.png" class="logo"></a>
+					<h1>Taskify</h1>
+				</div>
+			<center>
 
 			<center>
 				<h2>The anti procrastination tool of the internet</h2>
@@ -76,8 +79,9 @@ $stmt->execute();
 					name="confirmPassword" required>
 					<div id="pass_int"> </div>
 				</div>
-
-				<input type="submit" name="submit" value="submit">
+				<div class="submit_button">
+					<input type="submit" name="submit" value="Submit">
+				</div>
 			</form>
 		
 		</div>
