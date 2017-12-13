@@ -433,6 +433,11 @@ a{
 	align-content: right;
 }
 
+
+.remove_icon:hover {
+	transform: scale(0.9);
+}
+
 .List1 {
 	grid-row-start: r1;
 	grid-row-end: r2;
