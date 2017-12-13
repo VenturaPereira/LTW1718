@@ -1,8 +1,8 @@
 
 <?php
 
-include_once('C:\xampp\htdocs\LTW1718\php\session.php');
-include_once('C:\xampp\htdocs\LTW1718\php\add_task.php');
+include_once('../php/session.php');
+include_once('../php/add_task.php');
 
 $current_user = $_SESSION['username'];
 $curr_row= getIdFromUser($current_user);
@@ -15,10 +15,10 @@ $curr_id= $curr_row['id'];
 <head>
 
 
-	<script src="http://localhost/LTW1718/js/dropdown_button.js"></script>
-	<script src="http://localhost/LTW1718/js/user_menu.js"></script>
-	<script src="http://localhost/LTW1718/js/log_out.js"> </script>
-	<script src="http://localhost/LTW1718/html/add_task.js"> </script>
+	<script src="../js/dropdown_button.js"></script>
+	<script src="../js/user_menu.js"></script>
+	<script src="../js/log_out.js"> </script>
+	<script src="../html/add_task.js"> </script>
 
 	<title>Taskify</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css"></link>

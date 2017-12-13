@@ -1,7 +1,7 @@
 <?php
 
-include_once('C:\xampp\htdocs\LTW1718\php\init.php');
-include_once('C:\xampp\htdocs\LTW1718\php\add_task.php');
+include_once('../php/init.php');
+include_once('../php/add_task.php');
 
 $user_id = getIdFromUser($_SESSION['username']);
 

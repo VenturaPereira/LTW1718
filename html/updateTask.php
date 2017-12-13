@@ -1,8 +1,8 @@
 <?php
 
 
-include_once('C:\xampp\htdocs\LTW1718\php\add_task.php');
-include_once('C:\xampp\htdocs\LTW1718\php\init.php');
+include_once('../php/add_task.php');
+include_once('../php/init.php');
 
 $task_id= $_POST['task_value'];
 $list_id = $_POST['list_id'];

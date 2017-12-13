@@ -2,8 +2,8 @@
 <div class="registerValidation">
 
 <?php
-include_once('C:\xampp\htdocs\LTW1718\php\login_session.php');
-include_once('C:\xampp\htdocs\LTW1718\php\init.php');
+include_once('../php/login_session.php');
+include_once('../php/init.php');
 
 if(isset($_REQUEST['sign_in'])){
 if(isset($_REQUEST['check'])){
